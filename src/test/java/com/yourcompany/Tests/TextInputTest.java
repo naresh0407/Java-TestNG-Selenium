@@ -12,6 +12,22 @@ import java.rmi.UnexpectedException;
 import java.util.UUID;
 
 
+import java.net.MalformedURLException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import org.openqa.selenium.WebElement;
+import java.io.File;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+
 /**
  * Created by mehmetgerceker on 12/7/15.
  */
@@ -39,5 +55,15 @@ public class TextInputTest extends TestBase {
         this.annotate(String.format("Asserting submitted comment is: \"%s\"", commentInputText));
         Assert.assertTrue(page.getSubmittedCommentText().contains(commentInputText));
     }
+    @Test
+	public void testSearchGoogle() throws Exception{
+		System.out.println("Opening Google..");
+		driver.navigate().to(appURL);
+		WebElement java = driver.findElement(By.name("q"));
+		java.sendKeys("Selenium");
+		java.submit();
+		System.out.println("Title of the page now is: " + driver.getTitle());
+		this.takeSnapShot(driver, "Gsearch.png") ;
+	}
 
 }
