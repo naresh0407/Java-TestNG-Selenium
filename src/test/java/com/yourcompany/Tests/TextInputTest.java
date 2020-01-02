@@ -12,20 +12,7 @@ import java.rmi.UnexpectedException;
 import java.util.UUID;
 
 
-import java.net.MalformedURLException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-import org.openqa.selenium.WebElement;
-import java.io.File;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+
 
 
 /**
