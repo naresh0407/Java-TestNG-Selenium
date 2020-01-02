@@ -55,15 +55,5 @@ public class TextInputTest extends TestBase {
         this.annotate(String.format("Asserting submitted comment is: \"%s\"", commentInputText));
         Assert.assertTrue(page.getSubmittedCommentText().contains(commentInputText));
     }
-    @Test
-	public void testSearchGoogle() throws Exception{
-		System.out.println("Opening Google..");
-		driver.navigate().to(appURL);
-		WebElement java = driver.findElement(By.name("q"));
-		java.sendKeys("Selenium");
-		java.submit();
-		System.out.println("Title of the page now is: " + driver.getTitle());
-		this.takeSnapShot(driver, "Gsearch.png") ;
-	}
-
+  
 }
